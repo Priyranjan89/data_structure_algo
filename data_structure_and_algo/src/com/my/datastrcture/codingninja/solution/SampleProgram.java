@@ -1,4 +1,4 @@
-package com.my.datastrcture.codingninja;
+package com.my.datastrcture.codingninja.solution;
 
 public class SampleProgram {
     public static void main(String[] args){
