@@ -1,4 +1,4 @@
-package com.my.datastrcture.codestudio;
+package com.my.datastrcture.binary.search;
 
 import java.util.ArrayList;
 import java.util.Arrays;

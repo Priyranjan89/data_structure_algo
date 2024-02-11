@@ -2,7 +2,8 @@ package com.my.datastrcture.binary.search;
 
 import java.util.Arrays;
 
-public class AggressiveCows {
+public class
+AggressiveCows {
     public static void main(String[] args) {
         int stalls[] ={4, 2, 1, 3, 6};
         int k = 2;

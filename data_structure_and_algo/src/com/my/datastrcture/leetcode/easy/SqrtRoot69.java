@@ -25,7 +25,7 @@ Constraints:
 
 public class SqrtRoot69 {
     public static void main(String[] args) {
-        int n = 37;
+        int n = 7777777;
         int tempSol = mySqrt(n);
         System.out.println("Sqrt of "+n+" is "+tempSol);
 

@@ -36,7 +36,8 @@ Constraints:
 0 <= arr[i] <= 10^9
 
 Time Limit: 1 second*/
-public class SearchInRotatedSortedArray {
+public class
+SearchInRotatedSortedArray {
     public static void main(String[] args) {
         //int arr[] = {11 3 4 5 6 7 8 9};
         ArrayList<Integer> arr = new ArrayList<>();
@@ -55,7 +56,7 @@ public class SearchInRotatedSortedArray {
         System.out.println("Index of "+k+" is : "+search(arr, n, k));
     }
 
-    /*public static int getPivot(ArrayList<Integer> arr){
+    public static int getPivot(ArrayList<Integer> arr){
         int start = 0;
         int end = arr.size()-1;
         int mid = start + (end -start)/2;
@@ -99,7 +100,7 @@ public class SearchInRotatedSortedArray {
 
         return -1;
 
-    }*/
+    }
 
     public static int search(ArrayList<Integer> arr, int n, int k) {
         /*int pivot = getPivot(arr);
