@@ -5,14 +5,14 @@ public class MergeSort {
         int arr[] = {2, 13, 4, 1, 3, 6, 28};
         int l =0;
         int r = arr.length-1;
-        mergeSort(arr, l, r);
+        mergeSort(arr);
         for (int i : arr){
             System.out.print(i+" ");
         }
     }
 
 
-    public static void mergeSort(int[] arr, int l, int r){
+    public static void mergeSort(int[] arr){
         if (arr.length <= 1){
             return;
         }
@@ -28,8 +28,8 @@ public class MergeSort {
             c[i-arr.length/2] = arr[i];
         }
 
-        mergeSort(b, l, r);
-        mergeSort(c, l, r);
+        mergeSort(b);
+        mergeSort(c);
         merge( b, c, arr);
     }
 

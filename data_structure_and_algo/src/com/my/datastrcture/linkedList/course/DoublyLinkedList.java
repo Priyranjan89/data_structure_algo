@@ -8,7 +8,6 @@ public class DoublyLinkedList {
     public int size;
 
     public DoublyNode createDLL(int nodeValue){
-        head = new DoublyNode();
         DoublyNode newNode = new DoublyNode();
         newNode.value = nodeValue;
         newNode.next = null;

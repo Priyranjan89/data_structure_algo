@@ -4,7 +4,7 @@ public class ReturnAllCodesString {
     public static void main(String[] args) {
         String input = "1123";
         String ans[] = getCode(input);
-        for (int i =0; i < ans.length; i++){
+        for (int i = 0; i < ans.length; i++) {
             System.out.println(ans[i]);
         }
     }
