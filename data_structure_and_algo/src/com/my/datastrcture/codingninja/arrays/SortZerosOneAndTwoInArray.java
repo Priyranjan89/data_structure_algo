@@ -11,7 +11,7 @@ public class SortZerosOneAndTwoInArray {
     public static void sort012(int[] arr){
         int placeToMoveZero = 0;
         int high = arr.length-1;
-        int  i = 0;
+        int i = 0;
 
         while (i < arr.length && i <= high){
             if (arr[i] == 0){

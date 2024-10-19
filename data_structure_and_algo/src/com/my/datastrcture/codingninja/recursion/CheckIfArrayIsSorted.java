@@ -2,7 +2,7 @@ package com.my.datastrcture.codingninja.recursion;
 
 public class CheckIfArrayIsSorted {
     public static void main(String[] args) {
-        int arr[] = {1100};
+        int arr[] = {1,2,3,4,5,6,7,8,9};
         //int si = 0;
         System.out.println(arraySortedOrNot(arr, arr.length));
     }

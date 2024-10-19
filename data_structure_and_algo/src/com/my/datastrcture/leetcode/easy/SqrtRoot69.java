@@ -25,12 +25,20 @@ Constraints:
 
 public class SqrtRoot69 {
     public static void main(String[] args) {
-        int n = 7777777;
+        int n = 54;
         int tempSol = mySqrt(n);
         System.out.println("Sqrt of "+n+" is "+tempSol);
 
         double morePrecision = morePrecision(n, 3, tempSol);
         System.out.println("Sqrt of Precision for "+n+" is "+morePrecision);
+        System.out.println(mySqrt2(100));
+
+        n = 63;
+        double ans = myPrecisionSqrt(n); // TC: O(log n) + O(Precision).
+        System.out.printf("M1: Precision Sqrt: %.9f\n", ans);
+
+        ans = BSPrecision(n);
+        System.out.printf("M2: Precision Sqrt: %.9f\n", ans);
     }
 
     public static int mySqrt(int x) {
@@ -61,6 +69,32 @@ public class SqrtRoot69 {
         return ans;
     }
 
+    public static int mySqrt2(int x) {
+        int start = 0;
+        int end = x;
+        int mid = start + (end - start)/2;
+        int ans = -1;
+
+        if (x == 0 || x == 1)
+            return x;
+
+        while (start <= end) {
+
+            if (mid * mid == x){
+                return mid;
+            }
+            if ((long) mid*mid < (long) x){
+                ans = mid;
+                start = mid+1;
+            } else {
+                end = mid - 1;
+            }
+            mid = start + (end - start) / 2;
+        }
+
+        return ans;
+    }
+
     public static double morePrecision(int n, int precision, int tempSol){
         double factor = 1;
         double ans = tempSol;
@@ -73,6 +107,42 @@ public class SqrtRoot69 {
             }
         }
 
+        return ans;
+    }
+
+    public static double myPrecisionSqrt(int n) {
+        double sqrt = mySqrt(n); // O(log n) for integer part
+
+        int precision = 9;
+        double step = 0.1;
+        while (precision-- > 0) {
+            double j = sqrt; // start from the integer part
+            while (j * j <= n) {
+                sqrt = j;
+                j += step;
+            }
+            step /= 10;
+        }
+        return sqrt;
+    }
+
+    private static double BSPrecision(int n)
+    {
+        double start = 0;
+        double end = n;
+        double ans = 0;
+        while ((end - start) > 0.000000001)
+        {
+            double mid = (start + end) / 2;
+            double sqr = mid * mid;
+            if (sqr <= n)
+            {
+                ans = mid;
+                start = mid ;
+            }
+            else
+                end = mid;
+        }
         return ans;
     }
 }

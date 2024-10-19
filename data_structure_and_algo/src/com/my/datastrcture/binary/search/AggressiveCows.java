@@ -5,8 +5,11 @@ import java.util.Arrays;
 public class
 AggressiveCows {
     public static void main(String[] args) {
-        int stalls[] ={4, 2, 1, 3, 6};
-        int k = 2;
+       /* int stalls[] ={4, 2, 1, 3, 6};
+        int k = 2;*/
+        int n=5;
+        int k=3;
+        int []stalls = {1,2,3,4,7};
 
         System.out.println("Maximum distance between Aggressive cows: "+aggressiveCows(stalls, k));
     }

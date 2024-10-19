@@ -6,7 +6,7 @@ import java.util.List;
 
 public class GetAllUniqueSubset {
     public static void main(String[] args) {
-        int input[] = {1, 1, 2};
+        int input[] = {1, 2, 2};
         printSubsets(input);
     }
 

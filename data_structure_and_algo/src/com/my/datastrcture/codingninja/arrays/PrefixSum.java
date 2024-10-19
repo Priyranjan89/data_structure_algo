@@ -5,7 +5,8 @@ public class PrefixSum {
         int arr[] = {1, 2, 3, 4, 5};
         //int arr[] = {4, 8, 9, 11};
         printArray(arr);
-        prefixSum(arr);
+        //prefixSum(arr);
+        prefixSumOptimized(arr);
         printArray(arr);
 
     }
@@ -24,6 +25,21 @@ public class PrefixSum {
         for (int i = 0; i < n; i++){
             arr[i] = p[i];
         }
+    }
+
+    public static void prefixSumOptimized(int[] arr) {
+        int n = arr.length;
+        int p[] = new int[n];
+        int sum = 0;
+
+        for (int i = 0; i < n; i++){
+            sum += arr[i];
+            arr[i] = sum;
+        }
+
+        /*for (int i = 0; i < n; i++){
+            arr[i] = p[i];
+        }*/
     }
 
     public static void printArray(int[] arr) {

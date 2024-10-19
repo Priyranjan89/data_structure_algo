@@ -9,28 +9,6 @@ public class PrintKeypadStringInPhone {
         printKeypad(n);
     }
 
-    public static String[] keypad(int n){
-
-        if (n==0){
-            String ans[] = {""};
-            return ans;
-        }
-
-        int newNum = n % 10;
-        String ans[] = keypad(n/10);
-        String mapping = keyMapping(newNum);
-        String finalAns[] = new String[mapping.length()*ans.length];
-        int k = 0;
-
-        for (int i = 0; i < ans.length; i++){
-            for (int j = 0; j < mapping.length(); j++){
-                finalAns[k] = ans[i]+mapping.charAt(j);
-                k++;
-            }
-        }
-        return finalAns;
-    }
-
     public static void printKeypad(int input){
         printKeypad(input,"");}
 

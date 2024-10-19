@@ -57,7 +57,7 @@ public class FindOneElementNumberOfOccurrenceInArray {
             } else if (k > arr.get(mid)){
                 start = mid + 1;
 
-            } else if (k < arr.get(mid)){
+            } else {
                 end = mid - 1;
             }
 

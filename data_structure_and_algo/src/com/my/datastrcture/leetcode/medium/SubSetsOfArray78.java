@@ -3,7 +3,7 @@ package com.my.datastrcture.leetcode.medium;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SubSetsOfArray {
+public class SubSetsOfArray78 {
     public static void main(String[] args) {
         int arr[] = {1,2,3};
         List<List<Integer>> susets = subsets(arr);

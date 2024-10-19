@@ -14,7 +14,7 @@ public class QuickSortCoding {
             return;
         }
 
-        int pivot  = partition(input, startIndex, endIndex);
+        int pivot = partition(input, startIndex, endIndex);
         quickSort(input, startIndex, pivot-1);
         quickSort(input, pivot+1, endIndex);
     }

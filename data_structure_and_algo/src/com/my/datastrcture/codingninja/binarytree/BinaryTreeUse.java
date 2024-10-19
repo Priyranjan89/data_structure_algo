@@ -596,7 +596,7 @@ public class BinaryTreeUse {
     public static void rootToLeafPathsSumToK(BinaryTreeNode<Integer> root, int k) {
             rootToLeafPathsSumHelper(root, k , "");
         }
-        public static void rootToLeafPathsSumHelper(BinaryTreeNode<Integer> root, int k, String str) {
+        private static void rootToLeafPathsSumHelper(BinaryTreeNode<Integer> root, int k, String str) {
             if (root == null){
                 return;
             }
@@ -614,17 +614,6 @@ public class BinaryTreeUse {
         printKDistanceNode(root, node, k);
     }
 
-    private static void printKDistanceFromRoot(BinaryTreeNode<Integer> node, int k) {
-        if (node == null || k < 0)
-            return;
-
-        if (k == 0) {
-            System.out.println(node.data);
-            return;
-        }
-        printKDistanceFromRoot(node.left, k - 1);
-        printKDistanceFromRoot(node.right, k - 1);
-    }
 
     private static int printKDistanceNode(BinaryTreeNode<Integer> root, int node, int k) {
         if (root == null)
@@ -652,6 +641,18 @@ public class BinaryTreeUse {
             return 1 + rightDistance;
         }
         return -1;
+    }
+
+    private static void printKDistanceFromRoot(BinaryTreeNode<Integer> node, int k) {
+        if (node == null || k < 0)
+            return;
+
+        if (k == 0) {
+            System.out.println(node.data);
+            return;
+        }
+        printKDistanceFromRoot(node.left, k - 1);
+        printKDistanceFromRoot(node.right, k - 1);
     }
 
 
@@ -712,10 +713,12 @@ public class BinaryTreeUse {
         BinaryTreeNode<Integer> root = takeInputLevelWise();
         //insertDuplicateNode(root);
         printLevelWise(root);
-        Pair<Integer,Integer> ans = getMinAndMax(root);
+        /*Pair<Integer,Integer> ans = getMinAndMax(root);
         System.out.println();
         System.out.println("Max Value in Tree : "+ans.maximum);
-        System.out.println("Min Value in Tree : "+ans.minimum);
+        System.out.println("Min Value in Tree : "+ans.minimum);*/
+
+        nodesAtDistanceK(root, 5, 2);
 
 
     }

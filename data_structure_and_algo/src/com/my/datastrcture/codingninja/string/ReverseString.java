@@ -13,10 +13,6 @@ public class ReverseString {
 
     public static String reverseString(String str){
         String revStr = "";
-        /*for (int i = str.length()-1; i >= 0; i--){
-            revStr = revStr+str.charAt(i);
-        }*/
-
         for (int i = 0; i < str.length(); i++){
             revStr = str.charAt(i)+revStr;
         }

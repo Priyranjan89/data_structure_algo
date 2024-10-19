@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class MaximumFrequencyNumber {
     public static void main(String[] args) {
-        int arr[] = {7, 2, 2, 4, 8, 4};
+        int arr[] = {7, 2, 2, 4, 7, 4, 5, 7, 8, 4};
         System.out.println(maxFrequencyNumber(arr));
     }
 

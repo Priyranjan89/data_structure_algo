@@ -5,6 +5,7 @@ public class ReverseEachWordInString {
         String s = "today is sunday";
         System.out.println(s);
         System.out.println(reverseWord(s));
+        System.out.println(reverseWordOptimize(s));
     }
 
     public static String reverseWord(String str) {
@@ -23,6 +24,24 @@ public class ReverseEachWordInString {
             }
         }
 
+        return revWord;
+    }
+
+    public static String reverseWordOptimize(String str) {
+        String revWord = "";
+        String small = "";
+
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) != ' '){
+                small = str.charAt(i) + small;
+            } else {
+                revWord = revWord + small + " ";
+                small = "";
+            }
+            if (i == str.length()-1){
+                revWord = revWord + small;
+            }
+        }
         return revWord;
     }
 

@@ -24,8 +24,10 @@ public class MergeSort {
             b[i] = arr[i];
         }
 
+        int k = 0;
         for (int i = arr.length/2; i < arr.length; i++){
-            c[i-arr.length/2] = arr[i];
+            //c[i-arr.length/2] = arr[i];
+            c[k++] = arr[i];
         }
 
         mergeSort(b);
@@ -35,25 +37,25 @@ public class MergeSort {
 
 
 
-    public static int[] merge(int s1[], int s2[], int d[]) {
+    private static int[] merge(int s1[], int s2[], int arr[]) {
         int i = 0, j = 0, k = 0;
 
         while (i < s1.length && j < s2.length){
             if (s1[i] < s2[j]){
-                d[k++] = s1[i++];
+                arr[k++] = s1[i++];
             } else {
-                d[k++] = s2[j++];
+                arr[k++] = s2[j++];
             }
         }
 
         while (i < s1.length){
-            d[k++] = s1[i++];
+            arr[k++] = s1[i++];
         }
 
         while (j < s2.length){
-            d[k++] = s2[j++];
+            arr[k++] = s2[j++];
         }
 
-        return d;
+        return arr;
     }
 }

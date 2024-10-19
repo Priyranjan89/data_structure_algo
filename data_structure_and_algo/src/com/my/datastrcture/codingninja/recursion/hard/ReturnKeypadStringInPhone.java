@@ -12,7 +12,7 @@ public class ReturnKeypadStringInPhone {
         }
     }
 
-    public static String[] keypad(int n){
+   /* public static String[] keypad(int n){
 
         if (n == 0){
             String ans[] = {""};
@@ -32,9 +32,28 @@ public class ReturnKeypadStringInPhone {
         }
 
         return finalAns;
+    }*/
+
+    public static String[] keypad(int n) {
+        if (n == 0){
+            String ans[] = {""};
+            return ans;
+        }
+        int num = n%10;
+        String mapping = kayMapping(num);
+        String smallAns[] = keypad(n/10);
+        String finalAns[] = new String[smallAns.length*mapping.length()];
+
+        int k = 0;
+        for (int i = 0; i < smallAns.length; i++){
+            for (int j = 0; j < mapping.length(); j++){
+                finalAns[k++] = smallAns[i]+mapping.charAt(j);
+            }
+        }
+        return finalAns;
     }
 
-    private static String kayMapping(int newNum){
+        private static String kayMapping(int newNum){
         String str[] =  {"", "", "abc", "def", "ghi", "jkl","mno","pqrs","tuv","wxyz"};
         return str[newNum];
     }

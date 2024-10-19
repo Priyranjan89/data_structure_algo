@@ -4,6 +4,8 @@ public class BitwiseTest {
     public static void main(String[] args) {
         int a = 4;
         int b = 6;
+        int mid =5, divisor=2;
+        System.out.println("mid << divisor :"+(mid<<(divisor-1)));
 
         System.out.println("a & b :"+(a&b));
         System.out.println("a | b :"+(a|b));

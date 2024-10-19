@@ -5,7 +5,8 @@ public class ReverseIntuition {
         int arr[] = {11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
         int n = arr.length;
         printArray(arr);
-        reverseArray(arr, n);
+        //reverseArray(arr, n);
+        reverseArr(arr, n);
         printArray(arr);
 
     }
@@ -14,6 +15,17 @@ public class ReverseIntuition {
             int temp = nums[l];
             nums[l] = nums[r];
             nums[r] = temp;
+        }
+        return nums;
+    }
+    public static int[] reverseArr(int nums[], int n){
+        int l = 0, r  = n-1;
+        while ( l < r){
+            int temp = nums[l];
+            nums[l] = nums[r];
+            nums[r] = temp;
+            l++;
+            r--;
         }
         return nums;
     }

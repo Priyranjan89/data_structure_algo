@@ -40,9 +40,12 @@ While allocating the books, no book should be left out. In other words, we have 
 Allocate in a contiguous manner. Let's say; for example, you have to allocate three books to a student from pages[] = { 10,20,30,40}. Then, the possible allocations can be - {10,20,30} and {20,30,40}. You can’t allocate {10,30,40} as it is not contiguous.*/
 public class BookAllocationProblem {
     public static void main(String[] args) {
-        int arr[] = {10, 20, 30, 40};
+      /*  int arr[] = {10, 20, 30, 40};
         int m = 2; //No. of students
-        int n = 4;
+        int n = 4;*/
+        int n = 5;
+        int arr[] = {7,2,5,10,8};
+        int m = 2;
         System.out.println("The minimum value of the maximum number of pages in book allocation is: " + allocateBooks(arr, n, m));
     }
 

@@ -41,7 +41,7 @@ public class FindUniqueElementInArray {
         int arr[] = {1,3,1,3,6,6,7,10,7};
         //System.out.println("Unique Element in Array : "+findUnique(arr));
         System.out.println("Unique Element in Array : "+lonelyinteger(arr));
-        /*System.out.println("Unique Element in Array : "+findFirstUnique(arr));*/
+        System.out.println("Unique Element in Array : "+findFirstUnique(arr));
     }
 
     public static int findUnique(int[] arr){

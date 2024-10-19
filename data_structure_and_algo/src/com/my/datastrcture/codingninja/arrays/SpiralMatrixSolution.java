@@ -16,13 +16,13 @@ public class SpiralMatrixSolution {
         return arr;
     }
     public static void main(String[] args) {
-        //int arr[][] = {{1,2,3,4,5}, {16,17,18,19,6},{15,24,25,20,7},{14,23,22,21,8},{13,12,11,10,9}};
+        int arr[][] = {{1,2,3,4,5}, {16,17,18,19,6},{15,24,25,20,7},{14,23,22,21,8},{13,12,11,10,9}};
        /* int arr[][] = {{1,2,3,4,5,6},
                      {18,19,20,21,22,7},
                      {17,28,29,30,23,8},
                      {16,27,26,25,24,9},
                      {15,14,13,12,11,10}};*/
-        int arr[][] = takeInput();
+        //int arr[][] = takeInput();
         printArray(arr);
         spiralPrint(arr);
     }

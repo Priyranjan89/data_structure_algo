@@ -1,6 +1,6 @@
 package com.my.datastrcture.codingninja.sort;
 
-public class InsertionSort {
+public class  InsertionSort {
     public static void main(String[] args) {
         int arr[] = {2, 13, 4, 1, 3, 6, 28};
         int size = arr.length;

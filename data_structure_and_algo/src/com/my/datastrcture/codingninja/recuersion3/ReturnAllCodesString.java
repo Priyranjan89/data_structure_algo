@@ -14,39 +14,32 @@ public class ReturnAllCodesString {
             String ans[] = {""};
             return ans;
         }
-        String smallAns[] = getCode(input.substring(1));
+        int firstDigit = input.charAt(0) - '0';
+        String smallAns1[] = getCode(input.substring(1));
+        String smallAns2[] = new String[0];
 
-        int an = input.charAt(0) - '0';
-        char firstChar = (char) ('a' + an - 1);
-
-        for (int i = 0; i < smallAns.length; i++) {
-            smallAns[i] = firstChar + smallAns[i];
-        }
-
-        String smallans1[] = new String[0];
-        if (input.length() >= 2) {
-            int ch1 = input.charAt(0) - '0';
-            int ch2 = input.charAt(1) - '0';
-            int an3 = (ch1 * 10) + ch2;
-
-            if (an3 >= 10 && an3 <= 26) {
-                char firstTwoChar = (char) ('a' + an3 - 1);
-                smallans1 = getCode(input.substring(2));
-                for (int i = 0; i < smallans1.length; i++) {
-                    smallans1[i] = firstTwoChar + smallans1[i];
-                }
+        int firstTwoDigit =0;
+        if (input.length() >= 2){
+            firstTwoDigit = (input.charAt(0) - '0') * 10 + (input.charAt(1) - '0') ;
+            if (firstTwoDigit >= 10 && firstTwoDigit <= 26){
+                smallAns2 = getCode(input.substring(2));
             }
         }
-        String output[] = new String[smallAns.length + smallans1.length];
+
+        String output[] = new String[smallAns1.length + smallAns2.length];
         int k = 0;
-        for (int i = 0; i < smallAns.length; i++) {
-            output[k] = smallAns[i];
-            k++;
+        for (String str : smallAns1) {
+            char firsDigitChar = getChar(firstDigit);
+            output[k++] = firsDigitChar + str;
         }
-        for (int i = 0; i < smallans1.length; i++) {
-            output[k] = smallans1[i];
-            k++;
+        for (String str : smallAns2) {
+            char firsTwoDigitChar = getChar(firstTwoDigit);
+            output[k++] = firsTwoDigitChar + str;
         }
         return output;
+    }
+
+    private static char getChar(int digit){
+        return (char)('a' + digit-1);
     }
 }

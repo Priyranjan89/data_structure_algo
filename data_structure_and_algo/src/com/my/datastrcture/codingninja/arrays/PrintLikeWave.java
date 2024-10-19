@@ -22,7 +22,7 @@ public class PrintLikeWave {
             pos++;
 
             if (pos < col){
-                for (int i = bottom; i >= 0; i--){
+                for (int i = bottom; i >= top; i--){
                     System.out.print(mat[i][pos]+" ");
                 }
             }

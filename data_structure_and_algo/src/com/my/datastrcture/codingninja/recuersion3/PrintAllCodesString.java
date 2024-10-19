@@ -7,29 +7,27 @@ public class PrintAllCodesString {
     }
 
     public static void printAllPossibleCodes(String input) {
-        String output="";
-        helper(input,output);
+        printCodes(input,"");
     }
 
-    private static void helper(String input, String output) {
-        if (input.length() == 0) {
-            System.out.println(output);
+    private static void printCodes(String input, String currentCode) {
+        if (input.length() == 0){
+            System.out.println(currentCode);
             return;
         }
-        char ch1 = helper1(input.charAt(0) - '0');
-        helper(input.substring(1), output + ch1);
-        if (input.length() >= 2) {
-            int ch2 = input.charAt(0) - '0';
-            int ch3 = input.charAt(1) - '0';
-            int x = ch2 * 10 + ch3;
-            if (x >= 10 && x <= 26) {
-                char ch4 = helper1(x);
-                helper(input.substring(2), output + ch4);
+        int firstDigit = input.charAt(0) - '0';
+        if (firstDigit >= 1 && firstDigit <= 9){
+            char firstDigitChar = (char) ('a' + firstDigit - 1);
+            printCodes(input.substring(1), currentCode + firstDigitChar);
+        }
+        if (input.length() >= 2){
+            int firstTwoDigit = Integer.parseInt(input.substring(0,2));
+            if (firstTwoDigit >= 10 && firstTwoDigit <= 26){
+                char firstTwoDigitChar = (char) ('a' + firstTwoDigit - 1);
+                printCodes(input.substring(2), currentCode + firstTwoDigitChar);
             }
         }
     }
 
-    private static char helper1(int ch) {
-        return (char) ('a' + ch - 1);
-    }
+
 }
