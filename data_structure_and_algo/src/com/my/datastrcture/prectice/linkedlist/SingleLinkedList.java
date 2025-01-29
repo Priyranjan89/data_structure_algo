@@ -557,9 +557,9 @@ public class SingleLinkedList<T> {
         SinglyNode<Integer> next = null;
         SinglyNode<Integer> prev = null;
 
-        int count = 0;
+        int count = 1;
 
-        while (count < k && currentNode != null){
+        while (count <= k && currentNode != null){
             next = currentNode.next;
             currentNode.next = prev;
             prev = currentNode;
@@ -568,6 +568,39 @@ public class SingleLinkedList<T> {
         }
         if (next != null){
             head.next = kReverse(next, k);
+        }
+        return prev;
+    }
+
+    public SinglyNode<Integer> kReverseSecond(SinglyNode<Integer> head, int k) {
+        if (k == 0 || k == 1){
+            return head;
+        }
+        int index = 0;
+        SinglyNode<Integer> temp = head;
+        while (temp != null && index < k){
+            temp = temp.next;
+            index++;
+        }
+        if (index != k){
+            return head;
+        }
+
+        SinglyNode<Integer> currentNode = head;
+        SinglyNode<Integer> next = null;
+        SinglyNode<Integer> prev = null;
+
+        int count = 1;
+
+        while (count <= k && currentNode != null){
+            next = currentNode.next;
+            currentNode.next = prev;
+            prev = currentNode;
+            currentNode = next;
+            count++;
+        }
+        if (next != null){
+            head.next = kReverseSecond(next, k);
         }
         return prev;
     }

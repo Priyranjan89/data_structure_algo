@@ -106,7 +106,7 @@ public class SingleLinkedListMain {
         linkedList.printLL(swapNodes);
         System.out.println("Length Of Head = "+ linkedList.length(swapNodes));*/
 
-        SinglyNode<Integer> swapNodes = linkedList.kReverse(head, 3);
+        SinglyNode<Integer> swapNodes = linkedList.kReverseSecond(head, 4);
         linkedList.printLL(swapNodes);
         System.out.println("Length Of Head = "+ linkedList.length(swapNodes));
 

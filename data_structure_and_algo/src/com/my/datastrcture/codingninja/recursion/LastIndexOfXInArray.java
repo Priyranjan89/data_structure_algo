@@ -2,14 +2,15 @@ package com.my.datastrcture.codingninja.recursion;
 
 public class LastIndexOfXInArray {
     public static void main(String[] args) {
-        int arr[] = {13, 8, 10, 0, 9, 10, 24, 12};
-        int x = 8;
+        int arr[] = {13, 8, 10, 0, 9, 8, 24, 12};
+        int x = 10;
         System.out.println(lastIndex(arr, x));
     }
 
     public static int lastIndex(int input[], int x) {
         //return lastIndex(input, x, 0);
-        return lastIndexBetter(input, x, input.length-1);
+        //return lastIndexBetter(input, x, input.length-1);
+        return lastIndexBest(input, x, 0, -1);
     }
 
     public static int lastIndex(int input[], int x, int startIndex) {
@@ -37,6 +38,18 @@ public class LastIndexOfXInArray {
             return lastIndex;
         }
         return lastIndexBetter(input, x, lastIndex-1);
+
+    }
+
+
+    private static int lastIndexBest(int input[], int x, int startIndex, int ans) {
+        if (startIndex == input.length){
+            return ans;
+        }
+        if (input[startIndex] == x){
+            ans = startIndex;
+        }
+        return lastIndexBest(input, x, startIndex+1, ans);
 
     }
 }

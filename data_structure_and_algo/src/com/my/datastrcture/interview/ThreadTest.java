@@ -7,7 +7,7 @@ public class ThreadTest {
     public void printOddNumber(){
         synchronized (this){
             while (counter < num){
-                while (counter %2 == 0){
+                if (counter % 2 == 0){
                     try {
                         wait();
                     } catch (InterruptedException ex){
@@ -24,7 +24,7 @@ public class ThreadTest {
     public void printEvenNumber(){
         synchronized (this){
             while (counter < num){
-                while (counter %2 == 1){
+                if (counter % 2 == 1){
                     try {
                         wait();
                     } catch (InterruptedException ex){
@@ -39,19 +39,19 @@ public class ThreadTest {
     }
     public static void main(String[] args) {
         num = 20;
-        ThreadTest print = new ThreadTest();
+        ThreadTest threadTest = new ThreadTest();
 
         Thread t1 = new Thread(new Runnable() {
             @Override
             public void run() {
-                print.printOddNumber();
+                threadTest.printOddNumber();
             }
         });
 
         Thread t2  = new Thread(new Runnable() {
             @Override
             public void run() {
-                print.printEvenNumber();
+                threadTest.printEvenNumber();
             }
         });
 

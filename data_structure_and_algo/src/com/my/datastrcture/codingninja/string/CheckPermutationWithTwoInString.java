@@ -13,7 +13,7 @@ public class CheckPermutationWithTwoInString {
         System.out.println("Is Permutation of String '"+str1+"' and '"+str2+"' : "+isPermutation(str1, str2));
     }
 
-    public static boolean isPermutation(String str1, String str2) {
+    /*public static boolean isPermutation(String str1, String str2) {
 
         if (str1.length() != str2.length()){
             return false;
@@ -35,5 +35,25 @@ public class CheckPermutationWithTwoInString {
             }
         }
         return isPerm;
+    }*/
+
+    public static boolean isPermutation(String str1, String str2) {
+        if (str1.length() != str2.length()){
+            return false;
+        }
+
+        char chArr[] = new char[256];
+
+        for (int i=0; i < str1.length(); i++){
+            chArr[str1.charAt(i)]+=1;
+            chArr[str2.charAt(i)]-=1;
+        }
+
+        for (int i= 0; i < chArr.length; i++){
+            if (chArr[i] != 0){
+                return false;
+            }
+        }
+        return true;
     }
 }

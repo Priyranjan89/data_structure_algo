@@ -31,7 +31,7 @@ public class SingleLinkedListUsingRecursion<T> {
 
         return head;
     }
-
+//3 4 5 2 6 1 9 7 -1
     public SinglyNode<Integer> insertR(SinglyNode<Integer> head, int data, int pos){
 
         if(head == null && pos > 0){
@@ -79,6 +79,20 @@ public class SingleLinkedListUsingRecursion<T> {
 
     }
 
+
+    public SinglyNode<Integer> reverseRecBetter(SinglyNode<Integer> head) {
+        if (head == null || head.next == null){
+            return head;
+        }
+
+        SinglyNode<Integer> smallHead = reverseRecBetter(head.next);
+        head.next.next = head;
+        head.next = null;
+
+        return smallHead;
+
+    }
+
     public static DoubleN reverseRBetter(SinglyNode<Integer> head){
         DoubleN ans;
         if(head==null || head.next ==null){
@@ -114,11 +128,11 @@ public class SingleLinkedListUsingRecursion<T> {
         return findNodeRec(head.next, n, index);
     }
 
-    public SinglyNode<Integer> reverseRBeast(SinglyNode<Integer> head) {
+    public SinglyNode<Integer> reverseRBest(SinglyNode<Integer> head) {
         if (head == null || head.next == null){
             return head;
         }
-        SinglyNode<Integer> smallHead = reverseRBeast(head.next);
+        SinglyNode<Integer> smallHead = reverseRBest(head.next);
         SinglyNode<Integer> reverseTail = head.next;
         reverseTail.next = head;
         head.next = null;
@@ -156,10 +170,6 @@ public class SingleLinkedListUsingRecursion<T> {
     }
 
     public static SinglyNode<Integer> mergeTwoSorteds(SinglyNode<Integer> head1, SinglyNode<Integer> head2){
-
-        if (head1 == null && head2 == null){
-            return head1;
-        }
 
         if (head1 == null){
             return head2;
@@ -216,7 +226,7 @@ public class SingleLinkedListUsingRecursion<T> {
                     evenTail = head;
 
                 }
-                head = head.next;
+
             } else {
                 if (oddHead == null && oddTail == null){
                     oddHead = head;
@@ -225,8 +235,8 @@ public class SingleLinkedListUsingRecursion<T> {
                     oddTail.next = head;
                     oddTail = head;
                 }
-                head = head.next;
             }
+            head = head.next;
         }
 
         if (oddHead != null){

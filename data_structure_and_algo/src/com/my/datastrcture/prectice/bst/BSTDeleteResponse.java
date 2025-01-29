@@ -10,4 +10,6 @@ public class BSTDeleteResponse {
         this.root = root;
         this.delete = delete;
     }
+
+
 }

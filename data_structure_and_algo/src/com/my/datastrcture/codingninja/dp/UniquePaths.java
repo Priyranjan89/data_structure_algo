@@ -36,8 +36,8 @@ public class UniquePaths {
             }
             dp.add(row);
         }
-        return helper(n-1, m-1, mat);
-       // return helperTap(n, m, mat);
+        //return helper(n-1, m-1, mat);
+       return helperTap(n, m, mat);
     }
     private static int helperTap(int n, int m, ArrayList<ArrayList<Integer>> mat){
         for (int i = 0; i < m; i++){
@@ -64,6 +64,7 @@ public class UniquePaths {
         }
         return dp.get(n-1).get(m-1);
     }
+
 
     private static int helper(int i, int j, ArrayList<ArrayList<Integer>> mat){
         if (i == 0 && j == 0){

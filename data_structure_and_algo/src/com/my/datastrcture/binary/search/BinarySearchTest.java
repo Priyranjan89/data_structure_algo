@@ -16,22 +16,22 @@ public class BinarySearchTest {
 
     }
 
-    public static int binarySearch(int arr[], int size, int key) {
+    public static int binarySearch(int arr[], int size, int target) {
 
         int start = 0;
         int end = size-1;
         int mid = start +(end-start)/2;
 
         while (start <= end){
-            //Comparing middile index value with key
-            if (arr[mid] == key){
+            //Comparing middile index value with target
+            if (arr[mid] == target){
                 return mid;
             }
 
-            //If key value is greater than middle index value than go to right side in array
-            if (key > arr[mid]){
+            //If target value is greater than middle index value than go to right side in array
+            if (target > arr[mid]){
                 start = mid+1;
-            }else { //If key value is less than middle index value than go to array lift side in array
+            }else { //If target value is less than middle index value than go to array lift side in array
                 end = mid -1;
             }
             //now start or end value has been changed than again we need to calculate middle value

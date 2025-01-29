@@ -29,7 +29,6 @@ public class PrefixSum {
 
     public static void prefixSumOptimized(int[] arr) {
         int n = arr.length;
-        int p[] = new int[n];
         int sum = 0;
 
         for (int i = 0; i < n; i++){

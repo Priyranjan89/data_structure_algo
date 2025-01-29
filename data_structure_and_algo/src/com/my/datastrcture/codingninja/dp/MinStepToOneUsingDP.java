@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class MinStepToOneUsingDP {
     public static void main(String[] args) {
-        System.out.println(countMinStepsToOne(4));
-        System.out.println(countMinStepsToOne(7));
+       // System.out.println(countMinStepsToOne(4));
+        System.out.println(minStepsToOne(7));
     }
 
     public static int countMinStepsToOne(int n) {
@@ -61,4 +61,27 @@ public class MinStepToOneUsingDP {
         Arrays.fill(memo, -1);
         return minSteps(n, memo);
     }
+   /* public static int minSteps(int n, int[] dp) {
+        if (n == 1){
+            return 0;
+        }
+        if (dp[n] != -1){
+            return dp[n];
+        }
+         int steps = Integer.MAX_VALUE;
+
+        steps = Math.min(steps, 1 + minSteps(n-1, dp));
+
+        if (n%2 == 0){
+            steps = Math.min(steps, 1 + minSteps(n/2, dp));
+        }
+
+        if (n%3 == 0){
+            steps = Math.min(steps, 1 + minSteps(n/3, dp));
+        }
+
+        dp[n] = steps;
+
+        return steps;
+    }*/
 }

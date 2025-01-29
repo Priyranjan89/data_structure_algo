@@ -5,7 +5,7 @@ import java.util.Stack;
 public class CheckRedundantBrackets {
     public static void main(String[] args) {
         //String expression = "a+(b)+c";
-        String expression = "a+b+c";
+        String expression = "a+(b)+c";
         System.out.println(checkRedundantBrackets(expression));
     }
 

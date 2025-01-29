@@ -26,24 +26,6 @@ public class SubsetSumEqualToK {
         return helperTap(arr, n, k);
     }
 
-    private static boolean helper(int arr[], int n, int k, int index){
-        //base
-        if (k == 0)
-            return true;
-        if (index < 0)
-            return false;
-        if (dp.get(index).get(k) != null){
-            return dp.get(index).get(k);
-        }
-        boolean take = false, noTake;
-        noTake = helper(arr, n, k, index-1);
-        if (arr[index] <= k)
-            take = helper(arr, n, k-arr[index], index-1);
-
-        boolean temp = noTake || take;
-        dp.get(index).set(k, temp);
-        return temp;
-    }
     private static boolean helperTap(int arr[], int n, int k){
         for (int i = 0; i <= n; i++){
             dp.get(i).set(0, true);
@@ -63,5 +45,24 @@ public class SubsetSumEqualToK {
             }
         }
         return dp.get(n).get(k);
+    }
+
+    private static boolean helper(int arr[], int n, int k, int index){
+        //base
+        if (k == 0)
+            return true;
+        if (index < 0)
+            return false;
+        if (dp.get(index).get(k) != null){
+            return dp.get(index).get(k);
+        }
+        boolean take = false, noTake;
+        noTake = helper(arr, n, k, index-1);
+        if (arr[index] <= k)
+            take = helper(arr, n, k-arr[index], index-1);
+
+        boolean temp = noTake || take;
+        dp.get(index).set(k, temp);
+        return temp;
     }
 }

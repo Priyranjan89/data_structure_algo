@@ -2,7 +2,7 @@ package com.my.datastrcture.codingninja.sort;
 
 public class MergeSort {
     public static void main(String[] args) {
-        int arr[] = {2, 13, 4, 1, 3, 6, 28};
+        int arr[] = {2, 13, 4, 4, 1, 3, 6, 28};
         int l =0;
         int r = arr.length-1;
         mergeSort(arr);

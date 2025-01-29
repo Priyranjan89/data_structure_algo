@@ -17,12 +17,6 @@ public class GetAllUniqueSubset {
         Arrays.sort(input);
         helper(0, input, subset, ans);
 
-        /*ans.sort((list1, list2) -> {
-            String str1 = list1.toString();
-            String str2 = list2.toString();
-            return str1.compareTo(str2);
-        });*/
-
         for (List<Integer> list : ans) {
             for (int num : list) {
                 System.out.print(num + " ");

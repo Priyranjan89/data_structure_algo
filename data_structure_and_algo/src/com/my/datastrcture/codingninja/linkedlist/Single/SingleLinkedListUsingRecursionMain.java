@@ -8,11 +8,12 @@ public class SingleLinkedListUsingRecursionMain {
 
         printLikedList(head);
         //printLikedList(head2);
-
-        //head = listUsingRecursion.insertR(head,8, 7);
+        //3 4 5 2 6 1 9 7 -1
+        //head = listUsingRecursion.insertR(head,8, 8);
         //head = listUsingRecursion.deleteNodeRec(head,6);
         //head = listUsingRecursion.reverseRec(head);
         //head = listUsingRecursion.reverseRBeast(head);
+        //head = listUsingRecursion.reverseRecBetter(head);
         //Node<Integer> mid = listUsingRecursion.midPoint(head);
 
         //head = listUsingRecursion.mergeTwoSorteds(head, head2);
@@ -24,8 +25,8 @@ public class SingleLinkedListUsingRecursionMain {
 
         //head = listUsingRecursion.evenAfterOdd(head);
         //head = listUsingRecursion.skipMdeleteN(head, 2, 2);
-        //head = listUsingRecursion.swapNodes(head, 2, 2);
-        head = listUsingRecursion.kReverse(head, 4);
+        head = listUsingRecursion.swapNodes(head, 2, 5);
+        //head = listUsingRecursion.kReverse(head, 4);
 
         printLikedList(head);
     }

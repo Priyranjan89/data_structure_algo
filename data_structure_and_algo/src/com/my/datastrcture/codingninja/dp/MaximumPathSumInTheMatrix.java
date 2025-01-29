@@ -12,7 +12,7 @@ public class MaximumPathSumInTheMatrix {
                 {1,-9,-81,30,2,5},
                 {0,10,4,-79,2,-10},
                 {1,-5,2,20,-11,4}};
-        //System.out.println(getMaxPathSum(matrix));
+        System.out.println(getMaxPathSum(matrix));
         System.out.println(findMaxSumPath(matrix2));
         System.out.println(getMaxPathSum(matrix2));
     }

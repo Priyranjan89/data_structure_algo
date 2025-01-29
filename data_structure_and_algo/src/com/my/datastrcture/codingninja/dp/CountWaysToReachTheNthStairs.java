@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class CountWaysToReachTheNthStairs {
     public static void main(String[] args) {
-        System.out.println(countDistinctWayToClimbStair(51));
-        System.out.println(countDistinctWayToClimbStair(76));
+        System.out.println(countDistinctWayToClimbStair(4));
+        System.out.println(countDistinctWayToClimbStairX(5));
     }
 
     public static long countDistinctWayToClimbStair(int nStairs){

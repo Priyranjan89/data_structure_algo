@@ -25,8 +25,8 @@ public class RotationInArryWithNew {
         System.out.print("Please enter the Direction as RIGHT and LEFT Only : ");
         String dir = sc.next();
         printArray(arr);
-        rotateArray(arr, rotation, dir);
-        printArray(arr);
+        int[] ans = rotateArray(arr, rotation, dir);
+        printArray(ans);
     }
 
     public static int[] rotateArray(int []a, int x, String dir){
