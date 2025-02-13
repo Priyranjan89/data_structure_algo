@@ -1,14 +1,11 @@
 package com.my.datastrcture.prectice.leetcode.medium;
 
 
+import com.my.datastrcture.prectice.leetcode.TreeNode;
+
 import java.util.*;
 
-class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode(int x) { val = x; }
-}
+
 public class AllNodesDistanceKIBinaryTree {
     public List<Integer> distanceK(TreeNode root, TreeNode target, int K) {
         List<Integer> res= new ArrayList<>();

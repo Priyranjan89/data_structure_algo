@@ -1,19 +1,5 @@
 package com.my.datastrcture.prectice.avl;
 
-class Node {
-   int value;
-   Node left;
-   Node right;
-   int height;
-
-  public Node(int value) {
-    this.value = value;
-  }
-
-  public int getValue() {
-    return value;
-  }
-}
 
 public class AVL {
 
@@ -161,5 +147,7 @@ public class AVL {
         }
         return Math.abs(height(node.left) - height(node.right)) <= 1 && balanced(node.left) && balanced(node.right);
     }
+
+
 
 }

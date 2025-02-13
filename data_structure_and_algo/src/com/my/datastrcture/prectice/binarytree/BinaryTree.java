@@ -51,9 +51,9 @@ public class BinaryTree {
             System.out.println("Enter the root data: ");
         } else {
             if (isLeft){
-                System.out.println("Enter the left child of "+parentData);
+                System.out.println(" Enter the left child of "+parentData);
             } else {
-                System.out.println("Enter the right child of "+parentData);
+                System.out.println(" Enter the right child of "+parentData);
             }
         }
         Scanner sc = new Scanner(System.in);

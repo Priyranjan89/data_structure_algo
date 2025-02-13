@@ -1,4 +1,4 @@
-package com.my.datastrcture.leetcode.hard;
+package com.my.datastrcture.prectice.leetcode.hard;
 
 import com.my.datastrcture.prectice.leetcode.easy.LinkedListInsertNode;
 import com.my.datastrcture.prectice.leetcode.medium.ListNode;

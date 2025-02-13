@@ -1,5 +1,6 @@
 package com.my.datastrcture.prectice.leetcode.medium;
 
+import java.util.PriorityQueue;
 import java.util.Random;
 
 public class KthLargestElementInAnArray215 {
@@ -108,4 +109,22 @@ public class KthLargestElementInAnArray215 {
         input[start] = input[end];
         input[end] = temp;
     }
+
+    public int findKthLargestHeap(int[] nums, int k) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+
+        for (int i = 0; i < k; i++){
+            pq.offer(nums[i]);
+        }
+
+        for (int i = k; i<nums.length; i++){
+            int element = nums[i];
+            if (element > pq.peek()){
+                pq.poll();
+                pq.offer(element);
+            }
+        }
+        return pq.peek();
+    }
+
 }
